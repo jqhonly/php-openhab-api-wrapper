@@ -13,6 +13,8 @@ $e = new \Openhab\Execute('http://192.168.0.166:8080/');
 $response = $e->executeGet('rest/items/');
 $factory = new \Openhab\Items\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
+
+$filter = new \Openhab\Items\FilterItem();
 die();
 
 

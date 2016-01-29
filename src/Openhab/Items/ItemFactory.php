@@ -40,22 +40,22 @@ class ItemFactory
 		foreach ($this->items as $item) {
 			switch ($item->type) {
 				case 'StringItem':
-					$itemCollection->add(new StringItem($item));
+					$itemCollection->add((new StringItem())->populateBySimpleXmlElement($item));
 					break;
 				case 'SwitchItem':
-					$itemCollection->add(new SwitchItem($item));
+					$itemCollection->add((new SwitchItem())->populateBySimpleXmlElement($item));
 					break;
 				case 'GroupItem':
-					$itemCollection->add(new Item($item));
+					$itemCollection->add((new Item())->populateBySimpleXmlElement($item));
 					break;
 				case 'NumberItem':
-					$itemCollection->add(new Item($item));
+					$itemCollection->add((new Item())->populateBySimpleXmlElement($item));
 					break;
 				case 'DateTimeItem':
-					$itemCollection->add(new Item($item));
+					$itemCollection->add((new Item())->populateBySimpleXmlElement($item));
 					break;
 				case 'DimmerItem':
-					$itemCollection->add(new Item($item));
+					$itemCollection->add((new Item())->populateBySimpleXmlElement($item));
 					break;
 
 				default:

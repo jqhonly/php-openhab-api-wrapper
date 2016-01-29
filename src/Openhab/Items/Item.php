@@ -13,20 +13,17 @@ class Item
 	protected $name  = null;
 	protected $link = null;
 
-
 	/**
-	 * Item constructor.
 	 * @param \SimpleXMLElement $item
 	 */
-	public function __construct(\SimpleXMLElement $item)
-	{
-
+	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
 		$this->setLink((string)$item->link);
 		$this->setType((string)$item->type);
 		$this->setName((string)$item->name);
 		$this->setState((string)$item->state);
-
+		return $this;
 	}
+
 
 	/**
 	 * @return string
