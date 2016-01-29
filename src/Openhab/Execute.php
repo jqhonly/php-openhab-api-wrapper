@@ -41,7 +41,7 @@ class Execute
 		curl_setopt($ch, CURLOPT_POST,           1 );
 		curl_setopt($ch, CURLOPT_POSTFIELDS,     $value );
 		curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain'));
-		$result=curl_exec ($ch);
+		return curl_exec ($ch);
 	}
 
 	public function executeGet($route)

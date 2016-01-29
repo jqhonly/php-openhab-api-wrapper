@@ -3,7 +3,11 @@
 
 namespace Openhab\Item;
 
-
+/**
+ * Class Discover
+ * @todo implement me
+ * @package Openhab\Item
+ */
 class Discover
 {
 

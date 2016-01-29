@@ -1,10 +1,13 @@
 <?php
 
 
-namespace Openhab\Item;
+namespace Openhab\Factories;
 
+use Openhab\Collections\ItemCollection;
+use Openhab\Item\Item;
+use Openhab\Item\StringItem;
+use Openhab\Item\SwitchItem;
 
-use DoctrineModule\Paginator\Adapter\Collection;
 
 class ItemFactory
 {

@@ -11,17 +11,25 @@ $e = new \Openhab\Execute('http://192.168.0.166:8080/');
 
 
 $response = $e->executeGet('rest/items/');
-$factory = new \Openhab\Item\ItemFactory($response);
+$factory = new \Openhab\Factories\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
 
 $filter = new \Openhab\Item\FilterItem();
 $filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
 
-$result =$e->executePost('http://192.168.0.166:8080/rest/items/ALL_WZ_Alle_WHITE_MODE', \Openhab\Item\Command::OFF);
+#$result =$e->executePost('http://192.168.0.166:8080/rest/items/ALL_WZ_Alle_WHITE_MODE', \Openhab\Item\Command::OFF);
+
+
+$response =$e->executeGet('rest/sitemaps');
+$factory = new \Openhab\Factories\SiteMapFactory($response);
+$siteMap = $factory->getSiteMap();
+
+
+var_dump($siteMap);
 die();
 
-
+/*
 function getState(){
 	$result = file_get_contents(BASE_PATH . '/state');
 	return $result;
@@ -50,3 +58,4 @@ if('ON'=== $state ){
 }
 
 
+*/
