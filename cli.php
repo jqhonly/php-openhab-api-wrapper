@@ -1,6 +1,9 @@
 #!/usr/bin/php
 <?php
-
+/**
+ * http://demo.openhab.org:9080/doc/index.html
+ *
+ */
 define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle' );
 
 
