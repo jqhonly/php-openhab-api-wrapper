@@ -23,7 +23,7 @@ class Item
 
 	}
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getType()
 	{
@@ -31,7 +31,7 @@ class Item
 	}
 
 	/**
-	 * @param mixed $type
+	 * @param mixed string
 	 */
 	public function setType($type)
 	{
@@ -39,7 +39,7 @@ class Item
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getState()
 	{
@@ -47,7 +47,7 @@ class Item
 	}
 
 	/**
-	 * @param mixed $state
+	 * @param string $state
 	 */
 	public function setState($state)
 	{
@@ -55,7 +55,7 @@ class Item
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getName()
 	{
@@ -63,7 +63,7 @@ class Item
 	}
 
 	/**
-	 * @param mixed $name
+	 * @param string $name
 	 */
 	public function setName($name)
 	{
@@ -71,7 +71,7 @@ class Item
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getLink()
 	{
@@ -79,7 +79,7 @@ class Item
 	}
 
 	/**
-	 * @param mixed $link
+	 * @param string $link
 	 */
 	public function setLink($link)
 	{
