@@ -15,6 +15,8 @@ $response = $e->executeGet('rest/items/');
 $factory = new \Openhab\Items\ItemFactory($response);
 $items = $factory->getItems();
 die();
+
+
 function getState(){
 	$result = file_get_contents(BASE_PATH . '/state');
 	return $result;
