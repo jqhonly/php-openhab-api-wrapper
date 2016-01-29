@@ -34,6 +34,7 @@ class ItemCollection
 				}
 			}
 		}
+		return $resultSet;
 	}
 
 	public function add(Item $item)

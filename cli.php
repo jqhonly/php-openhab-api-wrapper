@@ -15,7 +15,7 @@ $factory = new \Openhab\Items\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
 
 $filter = new \Openhab\Items\FilterItem();
-$filter->setType('Switch');
+$filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
 die();
 
