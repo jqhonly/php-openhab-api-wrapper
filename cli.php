@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 /**
  * http://demo.openhab.org:9080/doc/index.html
@@ -13,7 +12,7 @@ $e = new \Openhab\Execute('http://192.168.0.166:8080/');
 
 $response = $e->executeGet('rest/items/');
 $factory = new \Openhab\Items\ItemFactory($response);
-$items = $factory->getItems();
+$itemCollection = $factory->getItemCollection();
 die();
 
 

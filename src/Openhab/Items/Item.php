@@ -14,7 +14,12 @@ class Item
 	protected $link;
 
 
-	public function __construct(\SimpleXMLElement $item ){
+	/**
+	 * Item constructor.
+	 * @param \SimpleXMLElement $item
+	 */
+	public function __construct(\SimpleXMLElement $item)
+	{
 
 		$this->setLink((string)$item->link);
 		$this->setType((string)$item->type);
@@ -22,6 +27,7 @@ class Item
 		$this->setState((string)$item->state);
 
 	}
+
 	/**
 	 * @return string
 	 */

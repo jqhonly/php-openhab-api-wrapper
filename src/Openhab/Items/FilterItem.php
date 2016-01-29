@@ -1,8 +1,10 @@
 <?php
 
-namespace Openhab\Items;
-class StringItem extends Item
-{
 
+namespace Openhab\Items;
+
+
+class FilterItem extends Item
+{
 
 }

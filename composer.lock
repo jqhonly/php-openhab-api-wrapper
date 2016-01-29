@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45b71b6464c2acff80421e471a7671ad",
-    "content-hash": "c71d93ea916bf2c980746f077f11dd5c",
+    "hash": "09e5a53624da8cb5f96cd5639d66c97e",
+    "content-hash": "4f0699f41465ba583dde5f6161ea9d0d",
     "packages": [
         {
             "name": "secondtruth/phar-compiler",
-            "version": "v1.0.0",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/secondtruth/php-phar-compiler.git",
@@ -56,20 +56,20 @@
         },
         {
             "name": "zendframework/zend-console",
-            "version": "2.5.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-console.git",
-                "reference": "ad425c45444a76d6559df45df14291940c6883f1"
+                "reference": "f2e5224cffe98d2444fe75d8c1338b09212df01d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-console/zipball/ad425c45444a76d6559df45df14291940c6883f1",
-                "reference": "ad425c45444a76d6559df45df14291940c6883f1",
+                "url": "https://api.github.com/repos/zendframework/zend-console/zipball/f2e5224cffe98d2444fe75d8c1338b09212df01d",
+                "reference": "f2e5224cffe98d2444fe75d8c1338b09212df01d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.23",
+                "php": ">=5.5",
                 "zendframework/zend-stdlib": "~2.5"
             },
             "require-dev": {
@@ -81,6 +81,7 @@
             },
             "suggest": {
                 "zendframework/zend-filter": "To support DefaultRouteMatcher usage",
+                "zendframework/zend-text": "Add text based components",
                 "zendframework/zend-validator": "To support DefaultRouteMatcher usage"
             },
             "type": "library",
@@ -104,7 +105,7 @@
                 "console",
                 "zf2"
             ],
-            "time": "2015-06-03 15:32:00"
+            "time": "2016-01-19 21:41:39"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -152,16 +153,16 @@
         },
         {
             "name": "zendframework/zend-http",
-            "version": "2.5.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-http.git",
-                "reference": "abe2e56464cd467214489672f103669957047548"
+                "reference": "24df7bd054598c45d5c66725cc74f6aeeee20466"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/abe2e56464cd467214489672f103669957047548",
-                "reference": "abe2e56464cd467214489672f103669957047548",
+                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/24df7bd054598c45d5c66725cc74f6aeeee20466",
+                "reference": "24df7bd054598c45d5c66725cc74f6aeeee20466",
                 "shasum": ""
             },
             "require": {
@@ -198,7 +199,7 @@
                 "http",
                 "zf2"
             ],
-            "time": "2015-08-05 15:47:13"
+            "time": "2016-01-19 21:28:00"
         },
         {
             "name": "zendframework/zend-hydrator",

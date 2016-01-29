@@ -4,6 +4,8 @@
 namespace Openhab\Items;
 
 
+use DoctrineModule\Paginator\Adapter\Collection;
+
 class ItemFactory
 {
 
@@ -26,35 +28,40 @@ class ItemFactory
 		$this->items = $this->xml2array($xml)['item'];
 	}
 
-	public function getItems()
-	{
 
-		$return = array();
+	/**
+	 * @return ItemCollection
+	 * @throws \Exception
+	 */
+	public function getItemCollection()
+	{
+		$itemCollection = new ItemCollection();
+
 		foreach ($this->items as $item) {
 			switch ($item->type) {
 				case 'StringItem':
-					$return [] = new StringItem($item);
+					$itemCollection->add(new StringItem($item));
 					break;
 				case 'SwitchItem':
-					$return[] = new SwitchItem($item);
+					$itemCollection->add(new SwitchItem($item));
 					break;
 				case 'GroupItem':
-					$return [] = new Item($item);
+					$itemCollection->add(new Item($item));
 					break;
 				case 'NumberItem':
-					$return [] = new Item($item);
+					$itemCollection->add(new Item($item));
 					break;
 				case 'DateTimeItem':
-					$return [] = new Item($item);
+					$itemCollection->add(new Item($item));
 					break;
 				case 'DimmerItem':
-					$return [] = new Item($item);
+					$itemCollection->add(new Item($item));
 					break;
 
 				default:
 					throw new \Exception(sprintf('unknown itemtype %s', $item->type));
 			}
 		}
-		return $return;
+		return $itemCollection;
 	}
 }
