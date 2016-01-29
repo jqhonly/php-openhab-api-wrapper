@@ -8,10 +8,10 @@ class Item
 {
 
 
-	protected $type;
-	protected $state;
-	protected $name;
-	protected $link;
+	protected $type = null;
+	protected $state = null;
+	protected $name  = null;
+	protected $link = null;
 
 
 	/**

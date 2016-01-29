@@ -2,6 +2,7 @@
   "name": "schmiddim/openhab-api-wrapper",
   "description": "openhab-api-wrapper is an API Wrapper for Openhab http://www.openhab.org/",
   "homepage": "http://www.radikalblogger.de",
+  "version" : "1.0.0",
   "license": "GPL-3.0",
   "autoload": {
     "psr-0": {
