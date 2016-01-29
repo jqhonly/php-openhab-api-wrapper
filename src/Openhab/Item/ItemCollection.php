@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Openhab\Items;
+namespace Openhab\Item;
 
 
 class ItemCollection

@@ -11,10 +11,10 @@ $e = new \Openhab\Execute('http://192.168.0.166:8080/');
 
 
 $response = $e->executeGet('rest/items/');
-$factory = new \Openhab\Items\ItemFactory($response);
+$factory = new \Openhab\Item\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
 
-$filter = new \Openhab\Items\FilterItem();
+$filter = new \Openhab\Item\FilterItem();
 $filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
 die();

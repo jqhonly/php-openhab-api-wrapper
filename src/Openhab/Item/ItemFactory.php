@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Openhab\Items;
+namespace Openhab\Item;
 
 
 use DoctrineModule\Paginator\Adapter\Collection;

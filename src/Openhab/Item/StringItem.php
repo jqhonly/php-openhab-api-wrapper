@@ -1,6 +1,6 @@
 <?php
 
-namespace Openhab\Items;
+namespace Openhab\Item;
 class StringItem extends Item
 {
 
