@@ -6,8 +6,15 @@
  */
 define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle' );
 
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+
+$e = new \Openhab\Execute('http://192.168.0.166:8080/');
 
 
+$response = $e->executeGet('rest/items/');
+$factory = new \Openhab\Items\ItemFactory($response);
+$items = $factory->getItems();
+die();
 function getState(){
 	$result = file_get_contents(BASE_PATH . '/state');
 	return $result;
