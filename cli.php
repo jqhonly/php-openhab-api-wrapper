@@ -17,6 +17,8 @@ $itemCollection = $factory->getItemCollection();
 $filter = new \Openhab\Item\FilterItem();
 $filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
+
+$result =$e->executePost('http://192.168.0.166:8080/rest/items/ALL_WZ_Alle_WHITE_MODE', \Openhab\Item\Command::OFF);
 die();
 
 
