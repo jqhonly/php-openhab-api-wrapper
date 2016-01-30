@@ -46,7 +46,7 @@ class Execute
 
 	public function executeGet($route)
 	{
-		return file_get_contents($this->getUrl() . $route);
+		return file_get_contents( $route);
 	}
 
 }

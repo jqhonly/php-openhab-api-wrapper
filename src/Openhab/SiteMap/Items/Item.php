@@ -1,12 +1,11 @@
 <?php
 
 
-namespace Openhab\Item;
+namespace Openhab\SiteMap\Items;
 
 
 class Item
 {
-
 
 	protected $type = null;
 	protected $name  = null;
@@ -17,6 +16,7 @@ class Item
 	 * @param \SimpleXMLElement $item
 	 */
 	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
+
 		$this->setLink((string)$item->link);
 		$this->setType((string)$item->type);
 		$this->setName((string)$item->name);

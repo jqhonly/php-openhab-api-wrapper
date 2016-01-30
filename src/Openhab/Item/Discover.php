@@ -6,7 +6,7 @@ namespace Openhab\Item;
 /**
  * Class Discover
  * @todo implement me
- * @package Openhab\Item
+ * @package Openhab\Items
  */
 class Discover
 {

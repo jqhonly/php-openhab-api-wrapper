@@ -4,6 +4,7 @@
 namespace Openhab\Factories;
 
 
+use Openhab\Execute;
 use Openhab\SiteMap\SiteMap;
 
 class SiteMapFactory
@@ -28,6 +29,19 @@ class SiteMapFactory
 
 		$this->siteMap = new SiteMap();
 		$this->siteMap->populateBySimpleXmlElement($xml);
+		$e = (new Execute(''))->executeGet($this->siteMap->getLink());
+
+		//@todo continue here
+		$xml = simplexml_load_string($e);
+
+
+		$this->siteMap = $xml;
+/*
+		foreach($xml->homepage->widget as $widget) {
+			$breaKL = true;
+		}
+		$brea= true;
+*/
 	}
 
 	public function getSiteMap()

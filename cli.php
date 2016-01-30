@@ -3,31 +3,50 @@
  * http://demo.openhab.org:9080/doc/index.html
  *
  */
-define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle' );
+
+use Openhab\SiteMap\Items\Factory as ItemFactory;
+
+define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle');
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $e = new \Openhab\Execute('http://192.168.0.166:8080/');
+$climate = new \League\CLImate\CLImate();
 
+/*
 
-$response = $e->executeGet('rest/items/');
+$response = $e->executeGet('http://192.168.0.166:8080/rest/items/');
 $factory = new \Openhab\Factories\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
 
-$filter = new \Openhab\Item\FilterItem();
+$filter = new \Openhab\Items\FilterItem();
 $filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
 
-#$result =$e->executePost('http://192.168.0.166:8080/rest/items/ALL_WZ_Alle_WHITE_MODE', \Openhab\Item\Command::OFF);
+*/
 
 
-$response =$e->executeGet('rest/sitemaps');
+//this is what counts
+$response = $e->executeGet('http://192.168.0.166:8080/rest/sitemaps');
 $factory = new \Openhab\Factories\SiteMapFactory($response);
 $siteMap = $factory->getSiteMap();
+//@todo sitemap darstellen
+#$result  = $e->executeGet($siteMap->getLink());
 
 
-var_dump($siteMap);
+#$climate->blue((string)$siteMap->label);
+$factory = new ItemFactory();
+$items  = array();
+foreach ($siteMap->homepage->widget as $widget) {
+	$object = $factory->createBySimpleXmlElement($widget);
+	$items[] = $object;
+
+}
+$to = new \Openhab\Textoutput($items, $climate);
+$to->echoSiteMap();
+#var_dump($siteMap);
 die();
+#$result =$e->executePost('http://192.168.0.166:8080/rest/items/ALL_WZ_Alle_WHITE_MODE', \Openhab\Items\Command::OFF);
 
 /*
 function getState(){
