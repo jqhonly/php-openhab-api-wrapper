@@ -4,7 +4,7 @@
 namespace Openhab\Factories;
 
 
-use Openhab\Execute;
+use Openhab\Request\Execute;
 use Openhab\SiteMap\SiteMap;
 
 class SiteMapFactory

@@ -6,11 +6,11 @@
 
 use Openhab\SiteMap\Items\Factory as ItemFactory;
 
-define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle');
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require_once  dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
 
-$e = new \Openhab\Execute('http://192.168.0.166:8080/');
+$e = new \Openhab\Request\Execute();
 
 /*
  * switch item

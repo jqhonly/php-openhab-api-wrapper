@@ -9,13 +9,14 @@ use Openhab\SiteMap\Items\Factory as ItemFactory;
 define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle');
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
-
-$e = new \Openhab\Execute('http://192.168.0.166:8080/');
+require_once  dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
+$e = new \Openhab\Request\Execute();
 $climate = new \League\CLImate\CLImate();
 
 
 //Get All Items...
-$response = $e->executeGet('http://192.168.0.166:8080/rest/items/');
+$url = (new \Openhab\Request\UriBuilder())->getUriForRoute('items');
+$response = $e->executeGet($url);
 $factory = new \Openhab\Factories\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
 

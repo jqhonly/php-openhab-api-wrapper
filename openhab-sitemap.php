@@ -7,12 +7,14 @@
 use Openhab\SiteMap\Items\Factory as ItemFactory;
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require_once  dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
 
-$e = new \Openhab\Execute();
+$e = new \Openhab\Request\Execute();
 $climate = new \League\CLImate\CLImate();
 
-//this is what counts
-$response = $e->executeGet('http://192.168.0.166:8080/rest/sitemaps');
+$url = (new \Openhab\Request\UriBuilder())->getUriForRoute('sitemaps');
+$response = $e->executeGet($url);
+
 $factory = new \Openhab\Factories\SiteMapFactory($response);
 $siteMap = $factory->getSiteMap();
 $factory = new ItemFactory();

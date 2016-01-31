@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Openhab;
+namespace Openhab\Request;
 
 
 use Zend\Http\Client;
