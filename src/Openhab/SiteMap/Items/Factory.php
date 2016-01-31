@@ -16,6 +16,7 @@ class Factory
 
 	public static function createBySimpleXmlElement(\SimpleXMLElement $element)
 	{
+		$object = null;
 
 		if ((string)$element->type === 'Frame') {
 
@@ -60,7 +61,6 @@ class Factory
 					$object->addChildren(self::createBySimpleXmlElement($widget));
 				}
 			}
-
 			return $object;
 		} elseif ((string)$element->type === 'Switch') {
 			$object = new SwitchItem();
@@ -97,9 +97,12 @@ class Factory
 		} elseif ((string)$element->type === 'StringItem') {
 			$object = new StringItem();
 			$object->populateBySimpleXmlElement($element);
-			return $object;
+
 		}
 
+		if ($object !== null) {
+			return $object;
+		}
 
 		throw new \Exception(sprintf('Unkown element %s', (string)$element->type));
 	}
