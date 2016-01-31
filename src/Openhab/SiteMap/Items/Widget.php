@@ -17,7 +17,8 @@ class Widget
 	/**
 	 * @param \SimpleXMLElement $item
 	 */
-	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
+	public function populateBySimpleXmlElement(\SimpleXMLElement $item)
+	{
 		$this->setWidgetId((string)$item->widgetId);
 		$this->setType((string)$item->type);
 		$this->setLabel((string)$item->label);
@@ -106,10 +107,10 @@ class Widget
 	}
 
 	/**
-	 * @todo correct parameter!
-	 * @param \stdClass $object
+	 * @param $object
 	 */
-	public function addChildren( $object) {
+	public function addChildren($object)
+	{
 		$this->children[] = $object;
 	}
 
