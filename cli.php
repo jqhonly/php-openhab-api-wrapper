@@ -14,7 +14,7 @@ $e = new \Openhab\Execute('http://192.168.0.166:8080/');
 $climate = new \League\CLImate\CLImate();
 
 
-/*
+
 $response = $e->executeGet('http://192.168.0.166:8080/rest/items/');
 
 $factory = new \Openhab\Factories\ItemFactory($response);
@@ -25,7 +25,6 @@ $filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
 
 
-*/
 
 //this is what counts
 $response = $e->executeGet('http://192.168.0.166:8080/rest/sitemaps');
