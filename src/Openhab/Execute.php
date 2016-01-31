@@ -3,7 +3,12 @@
 
 namespace Openhab;
 
-
+/**
+ * Class Execute
+ * @todo refactor me
+ * @package Openhab
+ *
+ */
 class Execute
 {
 
