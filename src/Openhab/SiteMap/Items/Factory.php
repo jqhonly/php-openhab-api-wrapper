@@ -78,6 +78,8 @@ class Factory
 		} elseif ((string)$element->type === 'StringItem') {
 			$object = new StringItem();
 			$object->populateBySimpleXmlElement($element);
+		} else {
+			throw new \Exception(sprintf('Unkown element %s', (string)$element->type));
 		}
 
 
@@ -91,9 +93,7 @@ class Factory
 		if ($object !== null) {
 			return $object;
 		}
-
 		throw new \Exception(sprintf('Unkown element %s', (string)$element->type));
+
 	}
-
-
 }
