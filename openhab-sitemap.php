@@ -6,8 +6,6 @@
 
 use Openhab\SiteMap\Items\Factory as ItemFactory;
 
-
-
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $e = new \Openhab\Execute();
@@ -18,7 +16,7 @@ $response = $e->executeGet('http://192.168.0.166:8080/rest/sitemaps');
 $factory = new \Openhab\Factories\SiteMapFactory($response);
 $siteMap = $factory->getSiteMap();
 $factory = new ItemFactory();
-$items  = array();
+$items = array();
 foreach ($siteMap->homepage->widget as $widget) {
 	$object = $factory->createBySimpleXmlElement($widget);
 	$items[] = $object;
