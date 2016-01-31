@@ -5,7 +5,6 @@ namespace Openhab\Request;
 
 
 use Zend\Http\Client;
-
 use Zend\Http\Request;
 
 /**
