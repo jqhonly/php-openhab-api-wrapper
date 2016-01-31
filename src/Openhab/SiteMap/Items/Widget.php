@@ -14,8 +14,10 @@ class Widget
 
 	protected $children = array();
 
+
 	/**
 	 * @param \SimpleXMLElement $item
+	 * @return $this
 	 */
 	public function populateBySimpleXmlElement(\SimpleXMLElement $item)
 	{

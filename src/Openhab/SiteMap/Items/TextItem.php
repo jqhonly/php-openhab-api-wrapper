@@ -4,8 +4,6 @@
 namespace Openhab\SiteMap\Items;
 
 
-use Openhab\Item\Item;
-
 class TextItem extends Widget
 {
 
@@ -14,8 +12,10 @@ class TextItem extends Widget
 	protected $label;
 	protected $icon;
 	protected $valueColor;
+
 	/**
 	 * @param \SimpleXMLElement $item
+	 * @return $this
 	 */
 	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
 		$this->setWidgetId((string)$item->widgetId);
@@ -24,69 +24,6 @@ class TextItem extends Widget
 		$this->setIcon((string)$item->icon);
 		$this->setValueColor((string)$item->valuecolor);
 		return $this;
-	}
-	/**
-	 * @return mixed
-	 */
-	public function getWidgetId()
-	{
-		return $this->widgetId;
-	}
-
-	/**
-	 * @param mixed $widgetId
-	 */
-	public function setWidgetId($widgetId)
-	{
-		$this->widgetId = $widgetId;
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getType()
-	{
-		return $this->type;
-	}
-
-	/**
-	 * @param mixed $type
-	 */
-	public function setType($type)
-	{
-		$this->type = $type;
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getLabel()
-	{
-		return $this->label;
-	}
-
-	/**
-	 * @param mixed $label
-	 */
-	public function setLabel($label)
-	{
-		$this->label = $label;
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getIcon()
-	{
-		return $this->icon;
-	}
-
-	/**
-	 * @param mixed $icon
-	 */
-	public function setIcon($icon)
-	{
-		$this->icon = $icon;
 	}
 
 	/**
