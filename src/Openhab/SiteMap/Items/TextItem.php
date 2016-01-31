@@ -105,6 +105,13 @@ class TextItem extends Widget
 		$this->valueColor = $valueColor;
 	}
 
+	public function getName(){
+		return $this->label;
+	}
+
+	public function getState(){
+		return 'not implemented';
+	}
 
 
 
