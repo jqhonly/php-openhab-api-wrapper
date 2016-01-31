@@ -10,7 +10,7 @@ define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle');
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
-
+$e = new \Openhab\Execute(BASE_PATH);
 $climate = new \League\CLImate\CLImate();
 
 //this is what counts
@@ -26,3 +26,5 @@ foreach ($siteMap->homepage->widget as $widget) {
 }
 $to = new \Openhab\Textoutput($items, $climate);
 $to->echoSiteMap();
+
+
