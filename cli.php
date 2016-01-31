@@ -14,9 +14,8 @@ $e = new \Openhab\Execute('http://192.168.0.166:8080/');
 $climate = new \League\CLImate\CLImate();
 
 
-
+//Get All Items...
 $response = $e->executeGet('http://192.168.0.166:8080/rest/items/');
-
 $factory = new \Openhab\Factories\ItemFactory($response);
 $itemCollection = $factory->getItemCollection();
 
