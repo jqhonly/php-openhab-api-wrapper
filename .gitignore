@@ -56,3 +56,4 @@ vendor/
 
 
 config.php
+deploy/*.phar
