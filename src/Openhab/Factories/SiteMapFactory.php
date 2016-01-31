@@ -29,12 +29,8 @@ class SiteMapFactory
 
 		$this->siteMap = new SiteMap();
 		$this->siteMap->populateBySimpleXmlElement($xml);
-		$e = (new Execute(''))->executeGet($this->siteMap->getLink());
-
-		//@todo continue here
+		$e = (new Execute())->executeGet($this->siteMap->getLink());
 		$xml = simplexml_load_string($e);
-
-
 		$this->siteMap = $xml;
 
 	}
