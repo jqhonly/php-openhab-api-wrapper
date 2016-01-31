@@ -36,12 +36,7 @@ class SiteMapFactory
 
 
 		$this->siteMap = $xml;
-/*
-		foreach($xml->homepage->widget as $widget) {
-			$breaKL = true;
-		}
-		$brea= true;
-*/
+
 	}
 
 	public function getSiteMap()
