@@ -34,7 +34,7 @@ class Factory
 				}
 			}
 
-			return $object;
+
 		} elseif ((string)$element->type === 'Group') {
 			$object = new Group();
 			$object->populateBySimpleXmlElement($element);
@@ -49,7 +49,7 @@ class Factory
 
 				}
 			}
-			return $object;
+			
 		} elseif ((string)$element->type === 'Text') {
 			$object = new TextItem();
 			$object->populateBySimpleXmlElement($element);
@@ -61,44 +61,46 @@ class Factory
 					$object->addChildren(self::createBySimpleXmlElement($widget));
 				}
 			}
-			return $object;
+			
 		} elseif ((string)$element->type === 'Switch') {
 			$object = new SwitchItem();
 			$object->populateBySimpleXmlElement($element);
 			if (is_object($element->item)) {
-
 				$object->addChildren(self::createBySimpleXmlElement($element->item));
-				return $object;
+				
 			}
 			$break = true;
 		} elseif ((string)$element->type === 'SwitchItem') {
 			$object = new OpenhabSwitchItem();
 			$object->populateBySimpleXmlElement($element);
-			return $object;
+			
 
 		} elseif ((string)$element->type === 'DimmerItem') {
 			$object = new OpenhabDimmerItem();
 			$object->populateBySimpleXmlElement($element);
-			return $object;
+			
 
 		} elseif ((string)$element->type === 'GroupItem') {
 			$object = new Item();
 			$object->populateBySimpleXmlElement($element);
-			return $object;
+			
 
 		} elseif ((string)$element->type === 'DateTimeItem') {
 			$object = new DateTimeItem();
 			$object->populateBySimpleXmlElement($element);
-			return $object;
+			
 		} elseif ((string)$element->type === 'NumberItem') {
 			$object = new NumberItem();
 			$object->populateBySimpleXmlElement($element);
-			return $object;
+			
 		} elseif ((string)$element->type === 'StringItem') {
 			$object = new StringItem();
 			$object->populateBySimpleXmlElement($element);
 
 		}
+
+
+
 
 		if ($object !== null) {
 			return $object;
