@@ -12,6 +12,7 @@ require_once  dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
 $e = new \Openhab\Request\Execute();
 $climate = new \League\CLImate\CLImate();
 
+
 $url = (new \Openhab\Request\UriBuilder())->getUriForRoute('sitemaps');
 $response = $e->executeGet($url);
 
@@ -24,6 +25,7 @@ foreach ($siteMap->homepage->widget as $widget) {
 	$items[] = $object;
 
 }
+
 $to = new \Openhab\Textoutput($items, $climate);
 $to->echoSiteMap();
 
