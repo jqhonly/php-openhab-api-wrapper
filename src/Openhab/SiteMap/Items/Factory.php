@@ -26,9 +26,13 @@ class Factory
 			$object->setWidgetId((string)$element->widgetId);
 			if (is_object($element->item)) {
 				$object->addChildren(self::createBySimpleXmlElement($element->widget));
-			} else {
-				throw new \Exception('Element item is not an object');
 			}
+			if (is_object($element->linkedPage->widget)) {
+				foreach ($element->linkedPage->widget as $widget) {
+					$object->addChildren(self::createBySimpleXmlElement($widget));
+				}
+			}
+
 			return $object;
 		} elseif ((string)$element->type === 'Group') {
 			$object = new Group();
@@ -36,11 +40,11 @@ class Factory
 			if (is_object($element->item)) {
 				$object->addChildren(self::createBySimpleXmlElement($element->item));
 			}
-			//@todo handle theese widget stuff
+
 			if (is_object($element->linkedPage->widget)) {
 
-				foreach($element->linkedPage->widget as $widget){
-				$object->addChildren(self::createBySimpleXmlElement($widget));
+				foreach ($element->linkedPage->widget as $widget) {
+					$object->addChildren(self::createBySimpleXmlElement($widget));
 
 				}
 			}
@@ -51,6 +55,12 @@ class Factory
 			if (is_object($element->item)) {
 				$object->addChildren(self::createBySimpleXmlElement($element->item));
 			}
+			if (is_object($element->linkedPage->widget)) {
+				foreach ($element->linkedPage->widget as $widget) {
+					$object->addChildren(self::createBySimpleXmlElement($widget));
+				}
+			}
+
 			return $object;
 		} elseif ((string)$element->type === 'Switch') {
 			$object = new SwitchItem();
@@ -89,8 +99,6 @@ class Factory
 			$object->populateBySimpleXmlElement($element);
 			return $object;
 		}
-
-
 
 
 		throw new \Exception(sprintf('Unkown element %s', (string)$element->type));
