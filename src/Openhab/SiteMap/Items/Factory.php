@@ -44,8 +44,6 @@ class Factory
 
 				}
 			}
-
-
 			return $object;
 		} elseif ((string)$element->type === 'Text') {
 			$object = new TextItem();
