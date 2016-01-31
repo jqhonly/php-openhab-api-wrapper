@@ -3,55 +3,43 @@
 
 namespace Openhab;
 
+
+use Zend\Http\Client;
+
+use Zend\Http\Request;
 /**
  * Class Execute
- * @todo refactor me
  * @package Openhab
  *
  */
 class Execute
 {
-
-	protected $url;
-
-	public function __construct($url)
+	public static function executePost($uri, $value)
 	{
-		$this->setUrl($url);
 
+		$client = new Client();
+		$client->setUri($uri);
+		$client->setMethod(Request::METHOD_POST);
+		$client->setRawBody($value);
+		$client->setHeaders(array('Content-Type: text/plain'));
+		$response = $client->send();
+		if ($response->getStatusCode() !== 200) {
+			throw new \Exception(sprintf('Request Response: Status Code %d, Url: %s', $response->getStatusCode(), $uri));
+		}
+		return $response->getBody();
 	}
 
-	/**
-	 * @return mixed
-	 */
-	public function getUrl()
-	{
-		return $this->url;
-	}
-
-	/**
-	 * @param mixed $url
-	 */
-	public function setUrl($url)
-	{
-		$this->url = $url;
-	}
-
-
-	public function executePost($route, $value)
+	public static function executeGet($uri)
 	{
 
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL,            $route );
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
-		curl_setopt($ch, CURLOPT_POST,           1 );
-		curl_setopt($ch, CURLOPT_POSTFIELDS,     $value );
-		curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain'));
-		return curl_exec ($ch);
-	}
-
-	public function executeGet($route)
-	{
-		return file_get_contents( $route);
+		$client = new Client();
+		$client->setUri($uri);
+		$client->setMethod(Request::METHOD_GET);
+		$response = $client->send();
+		if ($response->getStatusCode() !== 200) {
+			throw new \Exception(sprintf('Request Response: Status Code %d, Url: %s', $response->getStatusCode(), $uri));
+		}
+		return $response->getBody();
 	}
 
 }

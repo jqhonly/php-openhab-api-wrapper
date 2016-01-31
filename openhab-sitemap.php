@@ -6,11 +6,11 @@
 
 use Openhab\SiteMap\Items\Factory as ItemFactory;
 
-define('BASE_PATH', 'http://192.168.0.166:8080/rest/items/BueroAlle');
+
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
-$e = new \Openhab\Execute(BASE_PATH);
+$e = new \Openhab\Execute();
 $climate = new \League\CLImate\CLImate();
 
 //this is what counts
