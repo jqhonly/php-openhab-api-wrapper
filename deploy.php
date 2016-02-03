@@ -8,7 +8,8 @@ $compiler = new Compiler('./');
 $pharFiles = array(
 	'cli.php' => '.' . DIRECTORY_SEPARATOR . 'deploy/openhab-cli.phar',
 	'openhab-command.php' => '.' . DIRECTORY_SEPARATOR . 'deploy/openhab-command.phar',
-	'openhab-sitemap.php' => '.' . DIRECTORY_SEPARATOR . 'deploy/openhab-sitemap.phar'
+	'openhab-sitemap.php' => '.' . DIRECTORY_SEPARATOR . 'deploy/openhab-sitemap.phar',
+	'openhab-toggle.php' => '.' . DIRECTORY_SEPARATOR . 'deploy/openhab-toggle.phar'
 );
 
 foreach ($pharFiles as $indexFile => $compileTarget) {
@@ -20,9 +21,9 @@ foreach ($pharFiles as $indexFile => $compileTarget) {
 	$compiler->addDirectory('vendor/league', '!*.php');
 	$compiler->addDirectory('src', '!*.php');
 	$compiler->compile($compileTarget);
-	chmod($compileTarget, 0755);
 
 	if (true === defined('DEPLOY_TARGET')) {
 		copy($compileTarget, DEPLOY_TARGET . pathinfo($compileTarget)['filename']);
+		chmod(DEPLOY_TARGET . pathinfo($compileTarget)['filename'], 0755);
 	}
 }
