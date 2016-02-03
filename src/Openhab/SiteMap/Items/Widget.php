@@ -116,4 +116,11 @@ class Widget
 		$this->children[] = $object;
 	}
 
+	public function getName() {
+		return $this->getLabel();
+	}
+
+	public function getState(){
+		echo "this should not happen";
+	}
 }
