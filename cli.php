@@ -24,5 +24,9 @@ $filter = new \Openhab\Item\FilterItem();
 $filter->setType('SwitchItem');
 $result = $itemCollection->findByFilter($filter);
 
-var_dump($result);
+foreach($itemCollection->getItems()
+		as $item) {
+	echo  $item->getType() ."\t" .  $item->getName() . "\n";
+}
+
 

@@ -19,6 +19,22 @@ class Toggle
 	}
 
 	/**
+	 * @param $value Response Value
+	 * @return bool
+	 */
+	public static function isResponseIntegerValue($value)
+	{
+		if ($value == 'ON') {
+			return false;
+		}
+		if ($value == 'OFF') {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * @param $routeToItem
 	 * @throws \Exception
 	 */
@@ -26,10 +42,21 @@ class Toggle
 	{
 		$response = $this->executor->executeGet($routeToItem . '/state');
 
-		$value = 'ON';
-		if ($response === 'ON') {
-			$value = 'OFF';
+		if (true === self::isResponseIntegerValue($response)) {
+			$value = intval($response);
+			if ($value > 0) {
+				$executeResponse = $this->executor->executePost($routeToItem, 'OFF');
+
+			} else {
+				$executeResponse = $this->executor->executePost($routeToItem, '90');
+			}
+		} else {
+			$value = 'ON';
+			if ($response === 'ON') {
+				$value = 'OFF';
+			}
+			$executeResponse = $this->executor->executePost($routeToItem, $value);
+
 		}
-		$this->executor->executePost($routeToItem, $value);
 	}
 }
