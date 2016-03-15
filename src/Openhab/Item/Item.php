@@ -9,14 +9,15 @@ class Item
 
 
 	protected $type = null;
-	protected $name  = null;
+	protected $name = null;
 	protected $state = null;
 	protected $link = null;
 
 	/**
 	 * @param \SimpleXMLElement $item
 	 */
-	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
+	public function populateBySimpleXmlElement(\SimpleXMLElement $item)
+	{
 		$this->setLink((string)$item->link);
 		$this->setType((string)$item->type);
 		$this->setName((string)$item->name);

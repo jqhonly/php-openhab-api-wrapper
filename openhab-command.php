@@ -9,7 +9,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
 
 
-$uri =(new \Openhab\Request\UriBuilder())->getUriForRoute('items/');
+$uri = (new \Openhab\Request\UriBuilder())->getUriForRoute('items/');
 $e = new \Openhab\Request\Execute();
 
 /*

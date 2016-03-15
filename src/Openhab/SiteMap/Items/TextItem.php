@@ -17,7 +17,8 @@ class TextItem extends Widget
 	 * @param \SimpleXMLElement $item
 	 * @return $this
 	 */
-	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
+	public function populateBySimpleXmlElement(\SimpleXMLElement $item)
+	{
 		$this->setWidgetId((string)$item->widgetId);
 		$this->setType((string)$item->type);
 		$this->setLabel((string)$item->label);
@@ -42,16 +43,15 @@ class TextItem extends Widget
 		$this->valueColor = $valueColor;
 	}
 
-	public function getName(){
+	public function getName()
+	{
 		return $this->label;
 	}
 
-	public function getState(){
+	public function getState()
+	{
 		return 'not implemented';
 	}
-
-
-
 
 
 }

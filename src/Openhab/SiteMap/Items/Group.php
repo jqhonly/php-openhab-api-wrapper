@@ -9,7 +9,6 @@ class Group extends Widget
 	protected $linkedPage;
 
 
-
 	/**
 	 * @return mixed
 	 */
@@ -25,7 +24,6 @@ class Group extends Widget
 	{
 		$this->linkedPage = $linkedPage;
 	}
-
 
 
 }

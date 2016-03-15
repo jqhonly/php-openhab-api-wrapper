@@ -37,6 +37,6 @@ class Textoutput
 				}
 			}
 		}
-			$this->cliMate->table($data);
+		$this->cliMate->table($data);
 	}
 }

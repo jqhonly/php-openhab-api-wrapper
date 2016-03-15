@@ -13,14 +13,14 @@ class SiteMap
 	/**
 	 * @param \SimpleXMLElement $item
 	 */
-	public function populateBySimpleXmlElement(\SimpleXMLElement $item) {
+	public function populateBySimpleXmlElement(\SimpleXMLElement $item)
+	{
 
 		$this->setName((string)$item->sitemap->name);
 		$this->setLabel((string)$item->sitemap->label);
 		$this->setLink((string)$item->sitemap->link);
 		return $this;
 	}
-
 
 
 	/**
@@ -70,7 +70,6 @@ class SiteMap
 	{
 		$this->link = $link;
 	}
-	
-	
+
 
 }
