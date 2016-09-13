@@ -15,6 +15,7 @@ $pharFiles = array(
 foreach ($pharFiles as $indexFile => $compileTarget) {
 	$compiler->addIndexFile($indexFile);
 	$compiler->addFile('vendor/autoload.php');
+	$compiler->addFile('readConfig.php');
 	$compiler->addFile('config.php');
 	$compiler->addDirectory('vendor/composer', '!*.php');
 	$compiler->addDirectory('vendor/zendframework', '!*.php');

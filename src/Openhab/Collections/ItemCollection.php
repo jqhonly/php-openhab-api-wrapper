@@ -49,7 +49,7 @@ class ItemCollection
 	}
 
 	/**
-	 * @return array
+	 * @return Item[]
 	 */
 	public function getItems()
 	{

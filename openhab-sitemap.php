@@ -8,6 +8,7 @@ use Openhab\SiteMap\Items\Factory as ItemFactory;
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'readConfig.php';
 
 $e = new \Openhab\Request\Execute();
 $climate = new \League\CLImate\CLImate();
